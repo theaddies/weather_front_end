@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BigdaddyAddie</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./static/style.css">
     <style>
         .jumbotron {
             text-align: center;
@@ -24,7 +25,8 @@
             <div class="col-md-12">
                 <table class="table table-striped objecttable">
                     <thead>
-                        <tr><th>temperature</th>
+                        <!-- <tr>
+                            <th>temperature</th>
                             <th>pressure</th>
                             <th>humidity</th>
                             <th>wind speed</th>
@@ -36,20 +38,43 @@
                             <th>power</th>
                             <th>data point number</th>
                             <th>time</th>
-                        </tr>
+                        </tr> -->
                     </thead>
                     <tbody></tbody>
                 </table>
-                <style>
-                    .objecttable td {
-                      padding: 8px;
-                    }
-                </style>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Temperature</h2>
+                <div  id="temp"></div>
+                </select>
+            </div>
+            <div class="col-md-6">
+              <h2 class = "text-center">Humidity</h2>
+              <div id="humid"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Wind Direction</h2>
+                <div  id="direction"></div>
+                </select>
+            </div>
+            <div class="col-md-6">
+              <h2 class = "text-center">Wind Speed</h2>
+              <div id="speed"></div>
             </div>
         </div>
     </div>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="./static/js/app.js"></script>
 </body>
+<body class = "nothing"></body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./static/js/demo.js"></script>
+    <script src="./static/js/needle.js"></script>
+    <!-- <script src="./static/js/gauge.js"></script>
+    <script src="./static/js/gaugerender.js"></script> -->
+    <script src="./static/js/app.js"></script>
 
 </html>
