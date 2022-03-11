@@ -107,7 +107,47 @@ var graphData2 = [
 ];
 
 
-var layout3 = {width: 600, height: 300 , margin: {t:1, b:0, l:100, r:100}, templateitemname: 'step 1'};
+var layout3 = {width: 600,
+              height: 300 ,
+              margin: {t:1, b:0, l:100, r:100},
+              annotations: [
+                {
+                  showarrow: false,
+                  text: "<b>Dry</b>",
+                  textangle: -62,
+                  font: {
+                    color: "blue",
+                    size: 18
+                  },
+                  bgcolor: "white",
+                  x: 0.15,
+                  y: 0.3
+                },
+                {
+                  showarrow: false,
+                  text: "<b>Normal</b>",
+                  textangle: 0,
+                  font: {
+                    color: "blue",
+                    size: 18
+                  },
+                  bgcolor: "white",
+                  x: 0.5,
+                  y: 0.6
+                },
+                {
+                  showarrow: false,
+                  text: "<b>Humid</b>",
+                  textangle: 65,
+                  font: {
+                    color: "blue",
+                    size: 18
+                  },
+                  bgcolor: "white",
+                  x: 0.85,
+                  y: 0.2
+                }
+              ]};
 Plotly.newPlot('humid', graphData2, layout3);
 
 var windDirection = data.wind_direction;
@@ -151,6 +191,7 @@ layout3 = {
       range: [0, 5]
     }
   },
+  rotation: -90,
   showlegend: false
 }
 
@@ -179,7 +220,7 @@ var graphData4 = [
   score_value,
   {
 		values: [14, 14, 14, 14, 14, 30],
-	//"labels": ['very poor', 'poor','average','good','excellent',' '],
+	labels: ['0 - 5', '5 - 10','10 - 15','15 - 20','20 - 25',' '],
 		marker: {
         colors: [
           "rgb(72, 210, 45)",
@@ -195,15 +236,15 @@ var graphData4 = [
 				}
 		},
 		name: "Gauge",
-		hole: .85,
+		hole: .65,
 		type: "pie",
     rotation: -126,
 		direction: "clockwise",
 		sort: false,
 		showlegend: false,
-		hoverinfo: "none",
-		textinfo: "none",
-		textposition: "outside"
+		hoverinfo: "label",
+		textinfo: "label",
+		textposition: "inside"
 	}
 ];
 
@@ -211,7 +252,7 @@ var graphData4 = [
 pointer = ({
   type: 'path',
   path: function() {
-    const radius = 0.45;
+    const radius = 0.4;
     const size = 0.025;
 
     let theta = score;
@@ -244,6 +285,13 @@ layout4 = {
 console.log(layout4)
 //var layout4 = {width: 600, height: 300 }//, margin: {t:1, b:0, l:100, r:100}, templateitemname: 'step 1'};
 Plotly.newPlot('speed', graphData4, layout4);
+
+
+
+
+
+
+
 
 
 });
