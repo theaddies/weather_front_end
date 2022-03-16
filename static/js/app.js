@@ -158,46 +158,48 @@ if(windDirectionOpposite > 360) {
   windDirectionOpposite = windDirectionOpposite - 360;
 }
 
-var graphData3 = [
-  {
-    type: "scatterpolar",
-    mode: "lines",
-    r: [0, 4.8, 3.5, 4.8, 3.5],
-    theta: [0, windDirection, windDirection+5, windDirection, windDirection-5],
-    fillcolor: '#709BFF',
-    line: {
-      color: 'black',
-      width: 10
-    }
-  },
-  {
-    type: "scatterpolar",
-    mode: "lines",
-    r: [0, 5],
-    theta: [0, windDirectionOpposite],
-    fillcolor: '#709BFF',
-    line: {
-      color: 'black',
-      width: 10
-    }
-  }
-]
+updateAngle(windDirection);
+
+// var graphData3 = [
+//   {
+//     type: "scatterpolar",
+//     mode: "lines",
+//     r: [0, 4.8, 3.5, 4.8, 3.5],
+//     theta: [0, windDirection, windDirection+5, windDirection, windDirection-5],
+//     fillcolor: '#709BFF',
+//     line: {
+//       color: 'black',
+//       width: 10
+//     }
+//   },
+//   {
+//     type: "scatterpolar",
+//     mode: "lines",
+//     r: [0, 5],
+//     theta: [0, windDirectionOpposite],
+//     fillcolor: '#709BFF',
+//     line: {
+//       color: 'black',
+//       width: 10
+//     }
+//   }
+// ]
 
 
-layout3 = {
-  polar: {
-    radialaxis: {
-      visible: true,
-      range: [0, 5]
-    }
-  },
-  rotation: -90,
-  showlegend: false
-}
+// layout3 = {
+//   polar: {
+//     radialaxis: {
+//       visible: true,
+//       range: [0, 5]
+//     }
+//   },
+//   rotation: -90,
+//   showlegend: false
+// }
 
 
 
-Plotly.newPlot('direction', graphData3, layout3);
+// Plotly.newPlot('direction', graphData3, layout3);
 
 var windSpeed = data.wind_speed
 
@@ -285,14 +287,5 @@ layout4 = {
 console.log(layout4)
 //var layout4 = {width: 600, height: 300 }//, margin: {t:1, b:0, l:100, r:100}, templateitemname: 'step 1'};
 Plotly.newPlot('speed', graphData4, layout4);
-
-
-
-
-
-
-
-
-
 });
 
