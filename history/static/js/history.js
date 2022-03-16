@@ -1,4 +1,4 @@
-const url = "http://weatherapi.smartnprivate.com/posts/day/";
+const url = "https://weatherapi.smartnprivate.com/posts/day/";
 
 // Fetch the JSON data and console log it
 d3.json(url).then(function(data) {
