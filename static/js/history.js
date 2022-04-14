@@ -9,9 +9,14 @@ data.sort(function(a, b) {return a.id - b.id});
 
 var tempValues = data.map(d => d.temp);
 var humidValues = data.map(d => d.humid);
-var wind_directionValues = data.map(d => d.wind_direction);
+var wind_directionValues = data.map(windDirection);
 var wind_speedValues = data.map(d => d.wind_speed);
 var dateValues = data.map(d => d.created_at);
+var watertemperatureValues = data.map(d => d.w_temp);
+
+function windDirection (d) {
+  return d.wind_direction + d.bno_direction - 180;
+}
 
 var graphData1 = [{
 y: tempValues,
@@ -20,7 +25,14 @@ type: "line"
 }];
 
 var layout = {
-  title: "Chart"
+  yaxis: {
+    title: 'Temperature, '+'\u00B0'+'F',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+    }
+  },
 };
 
 Plotly.newPlot('temp', graphData1, layout);
@@ -32,7 +44,14 @@ var graphData2 = [{
   }];
   
   var layout = {
-    title: "Chart"
+    yaxis: {
+      title: 'Humidity, %',
+      titlefont: {
+        family: 'Arial, sans-serif',
+        size: 18,
+        color: 'black'
+      }
+    },
   };
   
   Plotly.newPlot('humid', graphData2, layout);
@@ -44,7 +63,14 @@ var graphData2 = [{
     }];
     
     var layout = {
-      title: "Chart"
+      yaxis: {
+        title: 'Speed, mph',
+        titlefont: {
+          family: 'Arial, sans-serif',
+          size: 18,
+          color: 'black'
+        }
+      },
     };
     
     Plotly.newPlot('speed', graphData3, layout);
@@ -56,10 +82,37 @@ var graphData2 = [{
       }];
       
       var layout = {
-        title: "'Bar' Chart"
+        yaxis: {
+          title: 'degrees '+'\u00B0',
+          titlefont: {
+            family: 'Arial, sans-serif',
+            size: 18,
+            color: 'black'
+          }
+        },
       };
       
       Plotly.newPlot('direction', graphData4, layout);
+
+      var graphData5 = [{
+        y: watertemperatureValues,
+        x: dateValues,
+        type: "line"
+        }];
+        
+        var layout = {
+          yaxis: {
+            title: 'Temperature, '+'\u00B0'+'F',
+            titlefont: {
+              family: 'Arial, sans-serif',
+              size: 18,
+              color: 'black'
+            }
+          },
+        };
+        
+        Plotly.newPlot('direction_2', graphData5, layout);
+
 
       console.log('print data');
       console.log(data);
@@ -105,4 +158,6 @@ var graphData2 = [{
     })
 
 });
+
+
 

@@ -149,16 +149,19 @@ var layout3 = {width: 600,
                 }
               ]};
 Plotly.newPlot('humid', graphData2, layout3);
+var bno = data.bno_direction;
 
-var windDirection = data.wind_direction;
+correctedBno = bno - 180;
 
-var windDirectionOpposite = windDirection + 180
+var windDirection = data.wind_direction + correctedBno;
 
-if(windDirectionOpposite > 360) {
-  windDirectionOpposite = windDirectionOpposite - 360;
+if(windDirection > 360) {
+  windDirection = windDirection - 360;
 }
 
 updateAngle(windDirection);
+
+console.log('windDirection =', windDirection)
 
 // var graphData3 = [
 //   {
@@ -287,5 +290,33 @@ layout4 = {
 console.log(layout4)
 //var layout4 = {width: 600, height: 300 }//, margin: {t:1, b:0, l:100, r:100}, templateitemname: 'step 1'};
 Plotly.newPlot('speed', graphData4, layout4);
+
+graphData5 = [
+  {
+    x: ['water'],
+    y: [data.w_temp],
+    type: 'bar',
+    marker: {color: 'red'},
+  }
+]
+
+layout5 = {
+  width: 300,
+  height:600,
+  font: { color: "black", size: 18, family: "Arial" },
+  yaxis: {
+    range: [30,80],
+    title: 'Temperature'+'\u00B0'+'F',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+    }
+  },
+}
+
+Plotly.newPlot('direction_2', graphData5, layout5);
+
+
 });
 
