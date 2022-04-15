@@ -5,50 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BigdaddyAddie</title>
+    <title>PYC Weather</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="./static/style.css">
     <style>
         .jumbotron {
             text-align: center;
+            background-image: url('lake_image.jpg');
+            background-position: 50% 50%;
+            background-repeat: repeat;
         }
         #myHeader {
             background-color: lightblue;
             color: black;
             padding: 40px;
             text-align: center;
-        } 
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Bigdaddy Addie Weather</h1>
-            <h2>We be live!</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-striped objecttable">
-                    <thead>
-                        <!-- <tr>
-                            <th>temperature</th>
-                            <th>pressure</th>
-                            <th>humidity</th>
-                            <th>wind speed</th>
-                            <th>wind direction</th>
-                            <th>bno_direction</th>
-                            <th>event direction</th>
-                            <th>current</th>
-                            <th>voltage</th>
-                            <th>power</th>
-                            <th>data point number</th>
-                            <th>time</th>
-                        </tr> -->
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+            <h1>Pymatuning Yacht Club Weather</h1>
+            <img src="./static/pycflag.png" alt="PYC flag" width="460" height="345">
+
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -85,11 +66,29 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <table class="table table-striped objecttable">
+                    <thead>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
                 <h1>
                     <a href="history/history.html">Historical Values</a>
                 </h1>
             </div>
         </div>
+        <p>Author: Bigdaddy Addie</p>
+        <p>Data: stored by Bigdaddy Addie <br>
+            front end code: <a href="https://github.com/theaddies/weather_front_end">front end</a> <br>
+            back end code: <a href="https://github.com/theaddies/weather_server_project">back end</a> <br>
+            gadget code: <a href="https://github.com/theaddies/fram_i2c_display_bme280_9dof">gadget code</a>
+        </p>
+        <p>API:  <a href="https://weatherapi.smartnprivate.com/docs">full dataset API</a></p>
+        <p>e-mail:  <a href="mailto:theaddies@neo.rr.com">bigdaddyaddie</a></p>
     </div>
 </body>
 <body class = "nothing"></body>
