@@ -161,6 +161,9 @@ if(windDirection > 360) {
 
 updateAngle(windDirection);
 
+console.log('bnoDirecation =', bno)
+console.log('corrected BNO =', correctedBno)
+console.log('raw direction =', data.wind_direction)
 console.log('windDirection =', windDirection)
 
 // var graphData3 = [
