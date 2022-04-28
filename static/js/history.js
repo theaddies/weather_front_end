@@ -13,11 +13,15 @@ var wind_directionValues = data.map(windDirection);
 var wind_speedValues = data.map(d => d.wind_speed);
 var dateValues = data.map(d => d.created_at);
 var watertemperatureValues = data.map(d => d.w_temp);
+var pressureValues = data.map(d => d.press);
 
 function windDirection (d) {
   correctedWind = d.wind_direction + d.bno_direction - 180;
   if(correctedWind > 360) {
     correctedWind = correctedWind - 360;
+  }
+  else if(correctedWind < 0) {
+    correctedWind = correctedWind + 360;
   }
   return correctedWind;
 }
@@ -117,6 +121,24 @@ var graphData2 = [{
         
         Plotly.newPlot('direction_2', graphData5, layout);
 
+        var graphData6 = [{
+          y: pressureValues,
+          x: dateValues,
+          type: "line"
+          }];
+          
+          var layout = {
+            yaxis: {
+              title: 'Pressure, mmHg',
+              titlefont: {
+                family: 'Arial, sans-serif',
+                size: 18,
+                color: 'black'
+              }
+            },
+          };
+          
+          Plotly.newPlot('pressure', graphData6, layout);
 
       console.log('print data');
       console.log(data);

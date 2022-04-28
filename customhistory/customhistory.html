@@ -21,9 +21,41 @@
             <h1>Pymatuning Yacht Club Weather</h1>
             <img src="../static/PYCflag.png" alt="PYC flag" width="460" height="345">
             <h2>Historical graphs!</h2>
-            <h3>Past 24 hours from right now</h3>
+            <h3>Choose your start and end dates</h3>
+        </div>
+        <div class="row margin-top-50">
+          <div class="col-md-12">
+            <aside>
+              <div>
+                <h4>Filter Search</h4>
+                  <form>
+                    <div class="form-group">
+                      <ul class="list-group">
+                          <li class = "list-group-item">
+                            <h5 class = "card-title">Start Date</h5>
+                            <label for="dateList">Pick a date:</label>
+                            <select class = "custom-select" name="dateList" id="dateList">
+                              <option value="">Empty</option>
+                              <option value="Benton">Benton</option>
+                            </select> 
+                          </li>
+                          <li class = "list-group-item">
+                            <h5 class = "card-title">End Date</h5>
+                            <label for="dateList">Pick a date:</label>
+                            <select class = "custom-select" name="dateList2" id="dateList2">
+                              <option value="">Empty</option>
+                              <option value="Benton">Benton</option>
+                            </select> 
+                          </li>
+                      </ul>
+                    </div>
+                    <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                </form>
+              </div>
+            </aside>
         </div>
 
+          
         <div class="row">
             <div class="col-md-6">
                 <h2 class="text-center">Temperature</h2>
@@ -71,6 +103,6 @@
 <body class = "nothing"></body>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="../static/js/history.js"></script>
+    <script src="../static/js/custom_history.js"></script>
 
 </html>
