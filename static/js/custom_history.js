@@ -9,16 +9,16 @@ d3.json(urlLast).then(function(data) {
   console.log(data);
   console.log(data.created_at)
   var endDate = new Date(data.created_at);
-  console.log(endDate)
+  console.log('end date =', endDate)
   console.log(endDate.getFullYear())
   console.log(endDate.getMonth()+1)
   console.log(endDate.getDate())
 
  
   d3.json(urlFirst).then(function(data) {
-    console.log(data.created_at);
+
     var startDate = new Date(data.created_at);
-  
+    console.log('start date =',startDate.setHours(0,0,0,0));
 
   dateArray = getDaysArray(startDate, endDate)
 
@@ -259,8 +259,13 @@ d3.json(urlDate).then(function(data) {
 console.log(simpleDateArray)
 console.log(dateArray)
   function  getDaysArray (start, end) {
+    // console.log('start date', new Date(start))
+    // console.log('end date', new Date(end))
+     console.log('new end date', new Date(end.setDate(end.getDate()+1)))
     for(var arr=[],dt=new Date(start); dt<=new Date(end); dt.setDate(dt.getDate()+1)){
         arr.push(new Date(dt));
+        console.log('loop');
+        console.log('dt = ',dt);
     }
     return arr;
 };
