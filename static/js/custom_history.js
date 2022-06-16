@@ -213,16 +213,16 @@ d3.json(urlDate).then(function(data) {
         console.log(Object.keys(data))
       var list = [data]
       console.log('simple for each');
-      data.forEach(d => console.log(d));
+      //data.forEach(d => console.log(d));
       
-        Object.values(data).forEach(function(d){return console.log(d)})
-        console.log("here we are");
-        Object.values(data).forEach(d => console.log(d))
+        // Object.values(data).forEach(function(d){return console.log(d)})
+        console.log('here we are');
+        // Object.values(data).forEach(d => console.log(d))
       
        //d3.select(".col-md-12").selectAll("thead").data(list).enter().data(Object.keys(data)).enter().append("th").text(d => d)
-      
-       d3.select(".col-md-12").select("thead").selectAll("tr").data([1]).enter().append("tr")
-       .selectAll("th").data(Object.keys(data[0])).enter().append("th").text(d => d)
+      console.log('print header')
+       d3.select("thead").selectAll("tr").data([1]).enter().append("tr")
+       .html('<td>temp</td><td>press</td><td>humid</td><td>wind_speed</td><td>wind_direction</td><td>bno_direction</td><td>w_temp</td><td>current</td><td>voltage</td><td>power</td><td>id</td><td>created_at</td>')
   
       //var header = "<th>id</th><th>temp</th><th>humid</th><th>press</th><th>wind_speed</th><th>direction</th><th>voltage</th><th>current</th><th>power</th><th>created_at</th>"
       
@@ -240,8 +240,8 @@ d3.json(urlDate).then(function(data) {
       
       var cells = rows
       .html(function(d) {
-        return `<td>${d.humid}</td><td>${d.temp}</td><td>${d.wind_speed}</td><td>${d.bno_direction}</td><td>${d.voltage}</td>
-        <td>${d.created_at}</td><td>${d.id}</td><td>${d.press}</td><td>${d.wind_direction}</td><td>${d.current}</td><td>${d.power}</td>`
+        return `<td>${d.temp}</td><td>${d.press}</td><td>${d.humid}</td><td>${d.wind_speed}</td><td>${d.wind_direction}</td>
+        <td>${d.bno_direction}</td><td>${d.w_temp}</td><td>${d.current}</td><td>${d.voltage}</td><td>${d.power}</td><td>${d.id}</td><td>${d.created_at}</td>`
       })
 
 
@@ -260,7 +260,7 @@ console.log(simpleDateArray)
 console.log(dateArray)
   function  getDaysArray (start, end) {
     // console.log('start date', new Date(start))
-    // console.log('end date', new Date(end))
+    // console.log('end date', new Date(end))ZDXSFzdfZDF
      console.log('new end date', new Date(end.setDate(end.getDate()+1)))
     for(var arr=[],dt=new Date(start); dt<=new Date(end); dt.setDate(dt.getDate()+1)){
         arr.push(new Date(dt));
