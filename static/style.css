@@ -23,6 +23,12 @@
     text-align: center;
   }
 
+  .color-red {
+	text-align: center;
+    color: red;
+	font-weight: bold;
+  }
+
   body {
 		font-family:  Helvetica, Arial, sans-serif;
 		margin: 32px;
