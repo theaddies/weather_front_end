@@ -77,7 +77,10 @@ d3.json(urlDate).then(function(data) {
   var pressureValues = data.map(d => d.press);
   
   function windDirection (d) {
-    correctedWind = d.wind_direction + d.bno_direction - 180;
+    //old line
+    //correctedWind = d.wind_direction + d.bno_direction - 180;
+    //new line
+    correctedWind = d.wind_direction + d.bno_direction;
     if(correctedWind > 360) {
       correctedWind = correctedWind - 360;
     }
