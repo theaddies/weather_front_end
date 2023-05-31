@@ -150,13 +150,18 @@ var layout3 = {width: 600,
               ]};
 Plotly.newPlot('humid', graphData2, layout3);
 var bno = data.bno_direction;
-
-correctedBno = bno - 180;
+//I don't know why the - 180 is here in this statement.
+//correctedBno = bno - 180;
+correctedBno = bno;
 
 var windDirection = data.wind_direction + correctedBno;
-
-if(windDirection > 360) {
+//added the else if and else statement below
+if (windDirection > 360) {
   windDirection = windDirection - 360;
+} else if (windDirection < 0) {
+  windDirection = windDirection + 360;
+} else {
+  windDirection = windDirection
 }
 
 updateAngle(windDirection);
