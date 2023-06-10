@@ -30,7 +30,8 @@ console.log(data[0])
 
 
 function windDirection (d) {
-  correctedWind = d.wind_direction + d.bno_direction - 180;
+  //I removed the -180 from the code here in june 2023
+  correctedWind = d.wind_direction + d.bno_direction;// - 180;
   if(correctedWind > 360) {
     correctedWind = correctedWind - 360;
   }
