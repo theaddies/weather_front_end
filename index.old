@@ -44,9 +44,6 @@ defer></script>
             </div>
         </div>
         -->
-
-        <h1 class = "text-center"> Data down for season</h1>
-<!--
         <div class="row">
             <div class="col-md-6">
                 <h2 class = "text-center">Wind Speed</h2>
@@ -74,6 +71,7 @@ defer></script>
                 <h2 class="text-center">Water Temperature</h2>
                 <div  id="direction_2"></div>
             </div>
+
             <div class="col-md-6">
               <h2 class = "text-center">Latest Image</h2>
               <h5 class = "text-center">(updated every minute)</h5>
@@ -81,17 +79,6 @@ defer></script>
               <div id="speed_2"></div>
             </div>
         </div>
-    -->
-        <P>
-            <h2 class = "text-center">Latest Lake Image</h2>
-            <h5 class = "text-center">(updated every minute)</h5>
-            <img src="./pyc_image/live/low_res_out.jpg" width="707" height="400">
-        </P>
-        <P>
-            <h2 class = "text-center">Latest Lawn Image</h2>
-            <h5 class = "text-center">(updated every minute)</h5>
-            <img src="./pyc_image/live/low_res_out1.jpg" width="707" height="400">
-        </P>
         <div>
             <!----just a blank row-->
         </div>
@@ -125,13 +112,9 @@ defer></script>
             </div>
             <div class="col-md-2">
                 <h2>
-                    <a href="./pyc_image/live/output_low.mp4"><p>Lake</p><p>timelapse</p></a>
+                    <a href="./pyc_image/live/output_low.mp4"><p>yesterday</p><p>timelapse</p></a>
                 </h2>
-            </div>
-            <div class="col-md-2">
-                <h2>
-                    <a href="./pyc_image/live/lawn_low.mp4"><p>Lawn</p><p>timelapse</p></a>
-                </h2>
+                <h5>right click - save link as...</h5>
             </div>
         </div>        
 
